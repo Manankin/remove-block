@@ -1,5 +1,7 @@
 # Remove block from the table
 
+To run app you can follow by this [DEMO LINK](https://manankin.github.io/remove-block/)
+
 - you have to choose amount of rows from 2 to 10
 - you have to choose amount of columns from 2 to 10
 - you have to choose amount of types from 2 to 10
