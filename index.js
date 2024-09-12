@@ -29,10 +29,9 @@ class Field {
     this._colsNum = colsNum;
     this._typesNum = typesNum
 
-    this._cells = new Cells;
+    this._cells = new Cells();
     this._html = new HTML;
     this._html.createTable(this._field, this._rowsNum, this._colsNum, this._typesNum, this._cells);
-    // console.log('field cells', this._cells);
     this._run();
   }
 
@@ -57,14 +56,14 @@ class Field {
 }
 
 class Cell {
-  // створюємо клітинку, куди передаємо тип, елемент(td) в якому відображається, номер рядка та колонки в таблиці, масив з іншими клітинками
+  // створюємо клітинку, куди передаємо тип, елемент(td) в якому відображається, номер рядка та колонки в таблиці, об'єкт з іншими клітинками
   constructor(type, elem, row, col, cells) {
     this._type = type;
     this._elem = elem;
     this._row = row;
     this._col = col;
     this._cells = cells;
-    // console.log('cell: ', this._cells)
+    console.log('cell: ', this._cells)
   }
 
   getRow() {
@@ -75,22 +74,19 @@ class Cell {
     return this._col
   }
 
-  // тут якісь костиль з вкладеністю _cells, де відбувається зайва вкладеність не розумію
   getNeighbour(offsetRow, offsetCol) {
     const row = this._row + offsetRow;
     const col = this._col + offsetCol;
 
     if (this._cells._cells[row] !== undefined) {
-      // console.log('inside getNeighbour:' , this._cells._cells[row][col])
       return this._cells._cells[row][col];
     }
-    return undefined;
   }
 
   _select() {
     this._elem.classList.add('selected');
   }
-  
+
   _unselect() {
     this._elem.classList.remove('selected');
   }
