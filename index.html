@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+
+  <title>BLOCKS GAME</title>
+</head>
+<body class="page">
+  <div class="container">
+    <header class="header">
+      <label for="rows" class="input-block">
+        rows amount (min: 2 and MAX: 10)
+        <input type="number" min="2" max="10" name='rows' id="rows" class="input-field">
+      </label>
+      <label for="columns" class="input-block">
+        columns amount (min: 2 and MAX: 10)
+        <input type="number" min="2" max="10" name='columns' id="cols"class="input-field">
+      </label>
+      <label for="types" class="input-block">
+        block types amount (min: 2 and MAX: 10)
+        <input type="number" min="2" max="10" name='types' id="types" class="input-field">
+      </label>
+      <div class="start">
+        start
+      </div>
+    </header>
+
+    <!-- <table class="table"></table> -->
+
+    <div id="field"></div>
+  </div>
+
+  <script src="./index.js" type="text/javascript"></script>
+</body>
+</html>
