@@ -141,11 +141,9 @@ class Cells {
 
       offSets.forEach((elem) => {
         const neighbour = this._block[i].getNeighbour(elem[0], elem[1]);
-        console.log(neighbour)
 
         if (neighbour) {
           if (neighbour._belongsTo(this._block[i]._type)) {
-            console.log('check neighbour', neighbour)
             neighbour._select();
             if (!this._block.includes(neighbour)) {
               this._block.push(neighbour);
@@ -153,13 +151,10 @@ class Cells {
           }
         }
       })
-
-      console.log(this._block);
     }
   }
 
   removeBlock() {
-    console.log(this._block)
     while (this._block.length > 0) {
       const item = this._block[0];
       const row = item.getRow();
@@ -167,8 +162,6 @@ class Cells {
       item._clear();
       this.removeCell(row, col);
       this._block.shift();
-      console.log('block', this._block)
-      console.log('cells', this._cells)
     }
   }
 
@@ -185,26 +178,16 @@ class HTML {
       const newRow = document.createElement('tr');
 
       for (let j = 0; j < cols; j++) {
-        // створюємо нову клітинку в HTML розмітці
         const newtd = document.createElement('td');
-        // створюємо для неї значення (тип)
         const rnd = this.getRandomType(types)
-        // додаємо клас до клітинки
         newtd.classList.add('cell', `cell--${rnd}`)
-        // додаємо текст відображення для клітинки
         newtd.innerText = rnd;
 
-        // створюємо нову сутність cell
         const cell = new Cell(rnd, newtd, i, j, cells)
-        // додаємо створену сутність до загального масиву сутностей
         cells.addCell(cell, i, j);
 
-        // додаємо клітинку до строки таблиці
         newRow.append(newtd);
 
-      // можна додати атрибути для кожної комірки з номером рядка та номером колонки (можливо буде простіше)
-      // newCell.dataset.row = i;
-      // newCell.dataset.col = j;
       }
 
       table.append(newRow);
