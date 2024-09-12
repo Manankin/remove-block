@@ -21,8 +21,6 @@ start.addEventListener('click', () => {
   new Field('#field', rowsAmount, columnsAmount, typesAmount);
 })
 
-
-
 // #region classes
 class Field {
   constructor(selector, rowsNum, colsNum, typesNum) {
@@ -53,7 +51,7 @@ class Field {
 
       setTimeout(() => {
         this._cells.removeBlock();
-      }, 2000)
+      }, 3000)
     })
   }
 }
@@ -231,4 +229,4 @@ class HTML {
     return i;
   }
 }
-// #end region
+// #endregion

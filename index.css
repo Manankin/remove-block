@@ -14,6 +14,12 @@
   text-align: center;
 }
 
+.input-block > span {
+  padding-right: 6px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .input-field {
   border: none;
   width: 100px;
@@ -22,12 +28,18 @@
   height: 30px;
   text-align: right;
   padding-right: 6px;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+input {
+  padding-right: 6px;
 }
 
 
 .page {
   padding-top: 12px;
-  border: 1px solid #c4c4c4;
+  /* border: 1px solid #c4c4c4; */
   height: 100vh;
 }
 
@@ -35,7 +47,7 @@
   margin: 0 auto;
   max-width: 1080px;
   width: 100%;
-  border: 1px solid #c0c0c0;
+  /* border: 1px solid #c0c0c0; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,4 +122,11 @@
 
 .selected {
   background-color: #505050;
+}
+
+.start {
+  background-color: greenyellow;
+  border-radius: 6px;
+  text-transform: uppercase;
+  padding-inline: 16px;
 }
